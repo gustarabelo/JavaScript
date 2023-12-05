@@ -29,10 +29,18 @@
             a.addEventListener('click',clicar)
             a.addEventListener('mouseenter', entrar)
             a.addEventListener('mouseout', sair)
+            var clicado = false
 
             function clicar(){
-                a.innerText = 'Clicou'
-                a.style.background = 'red'
+                if(!clicado){
+                    a.innerText = 'Clicou'
+                    a.style.background = 'red'
+                    clicado = true
+                }else{
+                    a.innerText = 'Clicou de novo'
+                    a.style.background = 'blue'
+                }
+                
             }
             function entrar(){
                 a.innerText = 'Entrou'
@@ -40,6 +48,7 @@
             function sair(){
                 a.innerText = 'Saiu'
                 a.style.background = 'green'
+                clicado = false
             }
         </script>
 </body>
